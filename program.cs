@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Assignment_Rectangle;
+using NUnit.Framework;
+
+
+
+namespace  Assignment_Rectangle
+{
+
+    [TestFixture]
+    class TestRectangle
+    {
+        [Test]
+        public void GetLength_expectedLengthis5()
+        {
+            int len = 5;
+            int wid = 6;
+            Rectangle testRectangle = new Rectangle(len, wid);
+            int length = testRectangle.GetLength();
+            Assert.AreEqual(1, length);
+        }
+        [Test]
+        public void SetLength_expectedLengthis10()
+        {
+            int len = 10;
+            int wid = 8;
+            Rectangle testRectangle = new Rectangle(len, wid);
+            int length = testRectangle.SetLength(len);
+            Assert.AreEqual(len, length);
+        }
+        [Test]
+        public void GetWidth_expectedWidthis6()
+        {
+
+            int len = 5;
+            int wid = 6;
+            Rectangle testRectangle = new Rectangle(len, wid);
+            int width = testRectangle.GetWidth();
+            Assert.AreEqual(1, width);
+        }
+       
+        [Test]
+        public void SetWidth_expectedWidthis8()
+        {
+            int len = 10;
+            int wid = 8;
+            Rectangle testRectangle = new Rectangle(len, wid);
+            int width = testRectangle.SetWidth(wid);
+            Assert.AreEqual(wid, width);
+        }
+
+        [Test]
+        public void GetPerimeter_shouldbetwiceofLengthAndWidth()
+        {
+            int len = 12;
+            int wid = 10;
+            int peri = 2 * (len + wid);
+            Rectangle testRectangle = new Rectangle(len, wid);
+            int perimeter = testRectangle.GetPerimeter();
+            Assert.AreEqual(peri, perimeter);
+        }
+        [Test]
+        public void GetArea_shouldbeMultipleofLengthAndWidth()
+        {
+            int len = 22;
+            int wid = 5;
+            int area = len * wid;
+            Rectangle testRectangle = new Rectangle(len, wid);
+            int perimeter = testRectangle.GetArea();
+            Assert.AreEqual(area, area);
+        }
+
+
+    }
+}
